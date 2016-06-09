@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tZa-AW-YbN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bz5-Fl-dlC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YpG-K4-dwb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdA-Lo-Lnz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-VX-Fel">
+                                <rect key="frame" x="16" y="526" width="288" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Let's set it up"/>
+                                <connections>
+                                    <action selector="throwPop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brq-X0-D4w"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="15Q-LM-lGu">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mb9-Gb-q5B">
+                                <rect key="frame" x="132" y="479" width="55" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TdA-Lo-Lnz" firstAttribute="centerX" secondItem="YpG-K4-dwb" secondAttribute="centerX" id="0GR-00-JgB"/>
+                            <constraint firstItem="15Q-LM-lGu" firstAttribute="centerX" secondItem="YpG-K4-dwb" secondAttribute="centerX" id="0v2-Zu-w1F"/>
+                            <constraint firstItem="TdA-Lo-Lnz" firstAttribute="top" secondItem="YpG-K4-dwb" secondAttribute="top" id="5bE-gu-TfV"/>
+                            <constraint firstItem="TdA-Lo-Lnz" firstAttribute="bottom" secondItem="Bz5-Fl-dlC" secondAttribute="top" id="5mB-9q-eDI"/>
+                            <constraint firstItem="15Q-LM-lGu" firstAttribute="top" secondItem="tZa-AW-YbN" secondAttribute="bottom" constant="200" id="8OH-7C-igu"/>
+                            <constraint firstItem="Bz5-Fl-dlC" firstAttribute="top" secondItem="T5i-VX-Fel" secondAttribute="bottom" constant="12" id="Hko-X9-DgQ"/>
+                            <constraint firstItem="15Q-LM-lGu" firstAttribute="centerY" secondItem="TdA-Lo-Lnz" secondAttribute="centerY" id="IDA-Ad-pk9"/>
+                            <constraint firstItem="15Q-LM-lGu" firstAttribute="leading" secondItem="YpG-K4-dwb" secondAttribute="leadingMargin" constant="24" id="JzP-lo-oAT"/>
+                            <constraint firstItem="T5i-VX-Fel" firstAttribute="top" secondItem="15Q-LM-lGu" secondAttribute="bottom" constant="178" id="MeZ-hb-iuw"/>
+                            <constraint firstItem="15Q-LM-lGu" firstAttribute="leading" secondItem="YpG-K4-dwb" secondAttribute="leading" constant="40" id="Ndv-ZL-4ac"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="T5i-VX-Fel" secondAttribute="leading" id="RGx-IN-VWb"/>
+                            <constraint firstAttribute="trailing" secondItem="15Q-LM-lGu" secondAttribute="trailing" constant="40" id="RLV-bU-hbx"/>
+                            <constraint firstAttribute="trailing" secondItem="TdA-Lo-Lnz" secondAttribute="trailing" id="h1W-p6-qCY"/>
+                            <constraint firstItem="T5i-VX-Fel" firstAttribute="top" secondItem="Mb9-Gb-q5B" secondAttribute="bottom" constant="10" id="hO1-tT-MRZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T5i-VX-Fel" secondAttribute="trailing" id="lfb-b7-KXO"/>
+                            <constraint firstItem="TdA-Lo-Lnz" firstAttribute="leading" secondItem="YpG-K4-dwb" secondAttribute="leading" id="o1D-4T-h7P"/>
+                            <constraint firstItem="Mb9-Gb-q5B" firstAttribute="centerX" secondItem="15Q-LM-lGu" secondAttribute="centerX" id="qeW-jY-xDs"/>
+                            <constraint firstItem="15Q-LM-lGu" firstAttribute="top" secondItem="tZa-AW-YbN" secondAttribute="bottom" constant="200" id="sSz-Ds-0JP"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="pageControl" destination="Mb9-Gb-q5B" id="AeY-1M-f7N"/>
+                        <outlet property="popupButton" destination="T5i-VX-Fel" id="Yxq-cV-KGZ"/>
+                        <outlet property="scrollView" destination="TdA-Lo-Lnz" id="i5F-98-C2u"/>
+                        <outlet property="textView" destination="15Q-LM-lGu" id="Zn2-Ii-ccS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="227" y="313"/>
+        </scene>
+    </scenes>
+</document>
