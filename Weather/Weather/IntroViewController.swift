@@ -9,9 +9,12 @@
 import UIKit
 import PopupController
 
+private let SettingsSegueIdentifier = "showSettingsView"
+
 class IntroViewController: UIViewController, UIScrollViewDelegate {
 
     var popView = PopupView()
+    var currentUser = User()
     
     @IBOutlet weak var baseView: IntroScrollView! {
         didSet {
@@ -31,7 +34,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView){
         
-        let pageWidth:CGFloat = CGRectGetWidth(scrollView.frame)
+        let pageWidth:CGFloat = scrollView.frame.width
         let currentPage:CGFloat = floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1
         // Change the text accordingly
         self.baseView.updateTextForPage(Int(currentPage))
@@ -59,8 +62,10 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         let container = PopupView.instance()
         container.closeHandler = { bool in
             if bool {
-           
+                self.performSegueWithIdentifier(SettingsSegueIdentifier, sender: nil)
+                self.currentUser.loginStatus = .LoggedIn
             }
+            popup.dismiss()
         }
 
         popup.show(container)

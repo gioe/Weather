@@ -15,18 +15,18 @@ class IntroScrollView: UIView {
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             
-            self.scrollView.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
+            self.scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
             let scrollViewWidth:CGFloat = self.scrollView.frame.width
             let scrollViewHeight:CGFloat = self.scrollView.frame.height
             
             for i in (0...numberOfScreens){
                 let newWidth = scrollViewWidth * CGFloat(i)
-                let screen = UIView(frame: CGRectMake(newWidth, 0, scrollViewWidth, scrollViewHeight))
+                let screen = UIView(frame: CGRect(x: newWidth, y: 0, width: scrollViewWidth, height: scrollViewHeight))
                 screen.backgroundColor = .blackColor()
                 self.scrollView.addSubview(screen)
             }
             
-            self.scrollView.contentSize = CGSizeMake(self.frame.width * CGFloat(numberOfScreens), self.frame.height)
+            self.scrollView.contentSize = CGSize(width: self.frame.width * CGFloat(numberOfScreens), height: self.frame.height)
             
         }
     }

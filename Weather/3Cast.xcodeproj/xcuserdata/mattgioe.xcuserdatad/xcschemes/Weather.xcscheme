@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AE7B4E71D09E95E00D0DC9F"
-               BuildableName = "Weather.app"
-               BlueprintName = "Weather"
-               ReferencedContainer = "container:Weather.xcodeproj">
+               BuildableName = "3Cast.app"
+               BlueprintName = "3Cast"
+               ReferencedContainer = "container:3Cast.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AE7B4FE1D09E95F00D0DC9F"
-               BuildableName = "WeatherTests.xctest"
-               BlueprintName = "WeatherTests"
-               ReferencedContainer = "container:Weather.xcodeproj">
+               BuildableName = "3Cast.xctest"
+               BlueprintName = "3CastTests"
+               ReferencedContainer = "container:3Cast.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AE7B5091D09E95F00D0DC9F"
-               BuildableName = "WeatherUITests.xctest"
-               BlueprintName = "WeatherUITests"
-               ReferencedContainer = "container:Weather.xcodeproj">
+               BuildableName = "3Cast.xctest"
+               BlueprintName = "3CastUITests"
+               ReferencedContainer = "container:3Cast.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AE7B4E71D09E95E00D0DC9F"
-            BuildableName = "Weather.app"
-            BlueprintName = "Weather"
-            ReferencedContainer = "container:Weather.xcodeproj">
+            BuildableName = "3Cast.app"
+            BlueprintName = "3Cast"
+            ReferencedContainer = "container:3Cast.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AE7B4E71D09E95E00D0DC9F"
-            BuildableName = "Weather.app"
-            BlueprintName = "Weather"
-            ReferencedContainer = "container:Weather.xcodeproj">
+            BuildableName = "3Cast.app"
+            BlueprintName = "3Cast"
+            ReferencedContainer = "container:3Cast.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AE7B4E71D09E95E00D0DC9F"
-            BuildableName = "Weather.app"
-            BlueprintName = "Weather"
-            ReferencedContainer = "container:Weather.xcodeproj">
+            BuildableName = "3Cast.app"
+            BlueprintName = "3Cast"
+            ReferencedContainer = "container:3Cast.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

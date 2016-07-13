@@ -17,37 +17,34 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
-enum GNMAPIService {
+enum APIHelper {
     
     /// Returns a list of nearby Place objects
-    case GetNearbyPlaces(nextPage : String?, place : GMSPlace)
-    
+    case GetForecastForCoordinate(coordinate : CLLocationCoordinate2D)
     
     var url : String {
         switch self {
             
-        case .GetNearbyPlaces(let nextPageString, let place):
-            if let nextPageString = nextPageString{
-                return "\(GNMConstants.googleRootUrl)nearbysearch/json?location=\(place.coordinate.latitude),\(place.coordinate.longitude)&radius=100&key=\(GNMConstants.GoogleAPIKey)&pagetoken=\(nextPageString)"
-            }
+        case .GetForecastForCoordinate(let coordinate):
             
-            return "\(GNMConstants.googleRootUrl)nearbysearch/json?location=\(place.coordinate.latitude),\(place.coordinate.longitude)&radius=100&key=\(GNMConstants.GoogleAPIKey)"
+            return "\(Constants.forecastRootURL)\(coordinate.latitude),\(coordinate.longitude)"
             
         }
     }
     
 }
 
-extension GNMAPIService {
+extension APIHelper {
     var alamofireMethod : Alamofire.Method {
         switch self {
-        case .GetNearbyPlaces:
+        case .GetForecastForCoordinate:
             return .GET
         }
     }
     
-    static func makeJSONRequest(endpoint : GNMAPIService, success:(JSON) -> Void, failure:(NSError) -> Void) {
+    static func makeJSONRequest(endpoint : APIHelper, success:(JSON) -> Void, failure:(NSError) -> Void) {
         Alamofire.request(endpoint.alamofireMethod, endpoint.url).responseJSON { (responseObject) -> Void in
             
             print(responseObject) //it will print the response success/failure anything

@@ -9,12 +9,12 @@
         <!--Intro View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="IntroViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroScrollView" id="BYZ-38-t0r" customClass="IntroViewController" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZa-AW-YbN"/>
                         <viewControllerLayoutGuide type="bottom" id="Bz5-Fl-dlC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YpG-K4-dwb" customClass="IntroScrollView" customModule="Weather" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="YpG-K4-dwb" customClass="IntroScrollView" customModule="_Cast" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -74,6 +74,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="baseView" destination="YpG-K4-dwb" id="p5R-RS-gxc"/>
+                        <segue destination="KFX-qa-TNm" kind="show" identifier="showSettingsView" id="bgu-hl-Di1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,7 +84,7 @@
         <!--Popup View-->
         <scene sceneID="McN-Yi-7DH">
             <objects>
-                <viewController id="kEJ-9N-up4" customClass="PopupView" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kEJ-9N-up4" customClass="PopupView" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0we-m1-J8q"/>
                         <viewControllerLayoutGuide type="bottom" id="Urm-xN-Spt"/>
@@ -92,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Ar-ez-ddE">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Ar-ez-ddE" customClass="Sett">
                                 <rect key="frame" x="21" y="484" width="278" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBH-M1-Omm">
@@ -120,7 +121,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owh-D5-wz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="998"/>
+            <point key="canvasLocation" x="227" y="958"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="nqO-5d-R9b">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="KFX-qa-TNm" customClass="SettingsViewController" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BrZ-91-pyU"/>
+                        <viewControllerLayoutGuide type="bottom" id="GDT-v7-2M6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DZL-F1-Ln8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVk-ca-HLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="307"/>
         </scene>
     </scenes>
 </document>

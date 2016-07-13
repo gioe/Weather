@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GNMConstants {
+struct Constants {
     static let ForecastAPIKey = "fa7fa58be6b3961fdd2486e753b0136d"
-    static let googleRootUrl = "https://api.forecast.io/forecast/\(ForecastAPIKey)/"
+    static let forecastRootURL = "https://api.forecast.io/forecast/\(ForecastAPIKey)/"
 }

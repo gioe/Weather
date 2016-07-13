@@ -16,7 +16,7 @@ class PopupView: UIViewController, PopupContentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = .whiteColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +51,6 @@ class PopupView: UIViewController, PopupContentViewController {
     }
     
     @IBAction func pressedNotificationsButton(sender: AnyObject) {
-        
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         UIApplication.sharedApplication().registerForRemoteNotifications()

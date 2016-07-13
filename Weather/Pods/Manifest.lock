@@ -1,12 +1,18 @@
 PODS:
+  - Alamofire (3.4.1)
   - PopupController (0.1.1)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.4)
   - PopupController
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   PopupController: 3cac2aeeeeeb17e3e64a0e3f85c66299bfc2d276
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 50e0ad5bcf08a70d791719dde11b714367d8b1e0
+PODFILE CHECKSUM: 6c8cf8b5c70678d12e46b5ed455068338204edf3
 
 COCOAPODS: 1.0.1

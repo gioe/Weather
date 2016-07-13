@@ -9,7 +9,7 @@
         <!--Popup View-->
         <scene sceneID="ZPl-XE-XZo">
             <objects>
-                <viewController id="05Q-G7-9aQ" customClass="PopupView" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="05Q-G7-9aQ" customClass="PopupView" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n5c-fn-lEd"/>
                         <viewControllerLayoutGuide type="bottom" id="kWo-hi-e32"/>
