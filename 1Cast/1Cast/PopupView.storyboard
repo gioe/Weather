@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="05Q-G7-9aQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Popup View-->
+        <scene sceneID="ZPl-XE-XZo">
+            <objects>
+                <viewController id="05Q-G7-9aQ" customClass="PopupView" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n5c-fn-lEd"/>
+                        <viewControllerLayoutGuide type="bottom" id="kWo-hi-e32"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e1J-Ea-8aa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-uR-Qkq">
+                                <rect key="frame" x="25" y="503" width="550" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-u1-ZRA">
+                                        <rect key="frame" x="0.0" y="0.0" width="550" height="32"/>
+                                        <color key="backgroundColor" red="0.26274509800000001" green="0.58431372550000005" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Enable Notifications"/>
+                                        <connections>
+                                            <action selector="pressedNotificationsButton:" destination="05Q-G7-9aQ" eventType="touchUpInside" id="WP2-wJ-KBa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ca-Sc-VOz">
+                                        <rect key="frame" x="0.0" y="45" width="550" height="32"/>
+                                        <color key="backgroundColor" red="0.26274509800000001" green="0.58431372550000005" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="pressedCloseButton:" destination="05Q-G7-9aQ" eventType="touchUpInside" id="6Ef-oL-96B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rml-o9-zK7">
+                                <rect key="frame" x="30" y="70" width="540" height="66.5"/>
+                                <string key="text">Once we get your location and 1Cast settings, we want to be able to notify you of the weather conditions automatically. To do that, we need your permission to send push notifications. Will you grant it?</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.96862745100000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Zw-uR-Qkq" firstAttribute="leading" secondItem="e1J-Ea-8aa" secondAttribute="leadingMargin" constant="5" id="1az-8s-b5e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rml-o9-zK7" secondAttribute="trailing" constant="10" id="D2s-KM-gnf"/>
+                            <constraint firstItem="rml-o9-zK7" firstAttribute="top" secondItem="n5c-fn-lEd" secondAttribute="bottom" constant="50" id="Lwb-oW-8x7"/>
+                            <constraint firstItem="rml-o9-zK7" firstAttribute="leading" secondItem="e1J-Ea-8aa" secondAttribute="leadingMargin" constant="10" id="csL-wn-bnS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Zw-uR-Qkq" secondAttribute="trailing" constant="5" id="eGs-55-kPr"/>
+                            <constraint firstAttribute="bottom" secondItem="6Zw-uR-Qkq" secondAttribute="bottom" constant="20" symbolic="YES" id="oMU-XX-8QZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="7Ca-Sc-VOz" id="sLb-Ww-yq4"/>
+                        <outlet property="enableNotificationsButton" destination="ayF-u1-ZRA" id="Hui-eC-Vab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01X-ar-iS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="348"/>
+        </scene>
+    </scenes>
+</document>

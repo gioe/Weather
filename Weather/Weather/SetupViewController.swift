@@ -8,10 +8,8 @@
 
 import UIKit
 import CoreLocation
-import RAMAnimatedTabBarController
 
-class MainViewController: RAMAnimatedTabBarController {
-
+class SetupViewController: UIViewController {
     
     var locationManager : CLLocationManager! {
         didSet {
