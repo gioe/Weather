@@ -1,19 +1,20 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Weather' do
+target '1Cast' do
   use_frameworks!
   
   pod 'PopupController'
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 3.4'
+  pod 'RAMAnimatedTabBarController'
 
-  target 'WeatherTests' do
+  target '1CastTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'WeatherUITests' do
+  target '1CastUITests' do
     inherit! :search_paths
     # Pods for testing
   end

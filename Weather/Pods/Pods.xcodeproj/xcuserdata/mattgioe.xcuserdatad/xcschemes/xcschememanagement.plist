@@ -9,22 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Weather.xcscheme</key>
+		<key>Pods-1Cast.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WeatherTests.xcscheme</key>
+		<key>Pods-1CastTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WeatherUITests.xcscheme</key>
+		<key>Pods-1CastUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>PopupController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RAMAnimatedTabBarController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,7 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2A27AF6F7C3D3F996F41B2991CD99CB1</key>
+		<key>381304714CA5C1DB44CCCBC8B51D9D2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B66B8F652690E51AC00DB8BFF2C6ADB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,22 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8413A2374F2AEA618001F6C692A55EAA</key>
+		<key>961C3610B9B4F4894F1688274EA74EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85CC3C96BAE9A1E7743F86035F1D61A9</key>
+		<key>AC983068A44028BA7D80649B702B8F8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9CB3770DDBF4DDD6BBD216DE38E7677</key>
+		<key>EDC3C7A07FB2D8EE00EBAFBC262C19B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB936F621C1FC6CBF064F974B9E3551B</key>
+		<key>F853F6F323634B678DE490FE54A09262</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,7 +9,7 @@
 import UIKit
 import PopupController
 
-private let SettingsSegueIdentifier = "showSettingsView"
+private let MainSegueIdentifier = "showMainView"
 
 class IntroViewController: UIViewController, UIScrollViewDelegate {
 
@@ -62,7 +62,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         let container = PopupView.instance()
         container.closeHandler = { bool in
             if bool {
-                self.performSegueWithIdentifier(SettingsSegueIdentifier, sender: nil)
+                self.performSegueWithIdentifier(MainSegueIdentifier, sender: nil)
                 self.currentUser.loginStatus = .LoggedIn
             }
             popup.dismiss()

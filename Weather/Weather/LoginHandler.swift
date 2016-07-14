@@ -21,7 +21,7 @@ enum LoginStatus : Int {
         switch self {
         case .LoggedIn:
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("SettingsViewController") as UIViewController
+            let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as UIViewController
             return viewController
         default:
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
