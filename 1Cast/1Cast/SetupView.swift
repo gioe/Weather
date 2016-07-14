@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SetupView: UIView {
-
+@IBDesignable class SetupView: UIView {
+    
+    var view: UIView!
     var questionsArray = ["What is your zipcode?", "What time would you like to be notified?", "To what degree of certainty do you want to be notified?", "What time frame would you like us to check for?"];
 
     @IBOutlet weak var inputTextField: UITextField!
@@ -25,10 +26,35 @@ class SetupView: UIView {
         }
     }
     
-    func handleQuestionSubmissionWithReponse(answer : String, completionHandler : ((Bool) -> ())){
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        xibSetup()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        xibSetup()
+    }
+    
+    func xibSetup() {
+        view = loadViewFromNib()
+        view.frame = bounds
+        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        addSubview(view)
+    }
+    
+    func loadViewFromNib() -> UIView {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: "SetupView", bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        return view
+    }
+    
+    
+    @IBAction func submitResponse(sender: AnyObject) {
+        
+        
+    }
     
 }
 

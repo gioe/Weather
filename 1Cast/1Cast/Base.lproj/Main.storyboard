@@ -73,7 +73,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="baseView" destination="YpG-K4-dwb" id="p5R-RS-gxc"/>
-                        <segue destination="SFp-8I-gE1" kind="show" identifier="showSetupView" id="cLs-Fe-kPe"/>
+                        <segue destination="SFp-8I-gE1" kind="show" identifier="showSetupView" id="8el-Pf-6uZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,109 +88,32 @@
                         <viewControllerLayoutGuide type="top" id="EWm-hg-XOt"/>
                         <viewControllerLayoutGuide type="bottom" id="Uy9-9w-gCz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fLN-tf-8YR" customClass="SetupView" customModule="_Cast" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="fLN-tf-8YR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xv-8t-fBC">
-                                <rect key="frame" x="92" y="300" width="137" height="46"/>
-                                <color key="backgroundColor" red="0.26274509800000001" green="0.58431372550000005" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="YNv-NC-hS4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Next question!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitResponse:" destination="SFp-8I-gE1" eventType="touchUpInside" id="8lF-df-6MH"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T4A-RL-1VS">
-                                <rect key="frame" x="92" y="241" width="137" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-N2-19G">
-                                <rect key="frame" x="58" y="189" width="205" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="VCf-ga-Ae3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yD8-cc-iMV" customClass="SetupView" customModule="_Cast" customModuleProvider="target">
+                                <rect key="frame" x="40" y="164" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.96862745100000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="0Xv-8t-fBC" firstAttribute="trailing" secondItem="T4A-RL-1VS" secondAttribute="trailing" id="0uP-NO-N3a"/>
-                            <constraint firstItem="T4A-RL-1VS" firstAttribute="top" secondItem="GrU-N2-19G" secondAttribute="bottom" constant="31" id="8W1-iT-IGO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="T4A-RL-1VS" secondAttribute="trailing" constant="75" id="LBL-Js-bhi"/>
-                            <constraint firstItem="Uy9-9w-gCz" firstAttribute="top" secondItem="0Xv-8t-fBC" secondAttribute="bottom" constant="222" id="QS7-Ut-59N"/>
-                            <constraint firstItem="GrU-N2-19G" firstAttribute="centerX" secondItem="T4A-RL-1VS" secondAttribute="centerX" id="Xn1-gb-NeM"/>
-                            <constraint firstItem="0Xv-8t-fBC" firstAttribute="leading" secondItem="T4A-RL-1VS" secondAttribute="leading" id="drh-tS-TbO"/>
-                            <constraint firstItem="GrU-N2-19G" firstAttribute="leading" secondItem="fLN-tf-8YR" secondAttribute="leadingMargin" constant="42" id="eiJ-nE-Kan"/>
-                            <constraint firstItem="T4A-RL-1VS" firstAttribute="centerX" secondItem="fLN-tf-8YR" secondAttribute="centerX" id="omT-N8-tOQ"/>
-                            <constraint firstItem="0Xv-8t-fBC" firstAttribute="top" secondItem="T4A-RL-1VS" secondAttribute="bottom" constant="29" id="uNd-DF-sla"/>
-                            <constraint firstItem="T4A-RL-1VS" firstAttribute="leading" secondItem="fLN-tf-8YR" secondAttribute="leadingMargin" constant="76" id="z7m-1w-alu"/>
+                            <constraint firstItem="yD8-cc-iMV" firstAttribute="centerY" secondItem="fLN-tf-8YR" secondAttribute="centerY" id="83H-gI-W2V"/>
+                            <constraint firstItem="yD8-cc-iMV" firstAttribute="centerX" secondItem="fLN-tf-8YR" secondAttribute="centerX" id="LNf-UX-CpD"/>
+                            <constraint firstItem="Uy9-9w-gCz" firstAttribute="top" secondItem="yD8-cc-iMV" secondAttribute="bottom" constant="164" id="RBM-oT-G3I"/>
+                            <constraint firstItem="yD8-cc-iMV" firstAttribute="leading" secondItem="fLN-tf-8YR" secondAttribute="leadingMargin" constant="24" id="oRr-SY-Arj"/>
+                            <constraint firstItem="yD8-cc-iMV" firstAttribute="top" secondItem="EWm-hg-XOt" secondAttribute="bottom" constant="144" id="v4e-Ad-1qJ"/>
                         </constraints>
-                        <connections>
-                            <outlet property="headerLabel" destination="GrU-N2-19G" id="pBx-e0-1jX"/>
-                            <outlet property="inputTextField" destination="T4A-RL-1VS" id="6Dt-pr-z72"/>
-                            <outlet property="submitButton" destination="0Xv-8t-fBC" id="Kh0-cW-V9E"/>
-                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="baseViewController" destination="fLN-tf-8YR" id="kHM-Rt-9np"/>
-                        <outlet property="textInput" destination="T4A-RL-1VS" id="FqW-1J-6KT"/>
+                        <outlet property="baseViewController" destination="yD8-cc-iMV" id="zED-Z1-Gh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLc-kD-QH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="621" y="313"/>
-        </scene>
-        <!--Popup View-->
-        <scene sceneID="McN-Yi-7DH">
-            <objects>
-                <viewController id="kEJ-9N-up4" customClass="PopupView" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0we-m1-J8q"/>
-                        <viewControllerLayoutGuide type="bottom" id="Urm-xN-Spt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8d3-Fn-Edf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Ar-ez-ddE" customClass="Sett">
-                                <rect key="frame" x="21" y="484" width="278" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBH-M1-Omm">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Enable Notifications"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee6-KJ-fc4">
-                                        <rect key="frame" x="0.0" y="34" width="278" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Cancel"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5Ar-ez-ddE" firstAttribute="leading" secondItem="8d3-Fn-Edf" secondAttribute="leadingMargin" constant="5" id="9vT-Mk-AzP"/>
-                            <constraint firstAttribute="bottom" secondItem="5Ar-ez-ddE" secondAttribute="bottom" constant="20" symbolic="YES" id="FbN-PZ-oCm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5Ar-ez-ddE" secondAttribute="trailing" constant="5" id="v7A-PO-Ym8"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Owh-D5-wz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="227" y="958"/>
         </scene>
     </scenes>
 </document>

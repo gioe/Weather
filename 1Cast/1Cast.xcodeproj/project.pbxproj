@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A5CB7E61D380AE300A57213 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */; };
+		1AC05A091D381B6D00ED59FD /* SetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC05A081D381B6D00ED59FD /* SetupView.xib */; };
 		1AEA26EB1D380BEC00B3CD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AEA26EA1D380BEC00B3CD75 /* Assets.xcassets */; };
 		1AEA26EF1D380C0100B3CD75 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA26EC1D380C0100B3CD75 /* APIHelper.swift */; };
 		1AEA26F01D380C0100B3CD75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA26ED1D380C0100B3CD75 /* Constants.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		09A2612F4B12FF60DD18D456 /* Pods_1Cast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_1Cast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1AC05A081D381B6D00ED59FD /* SetupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupView.xib; sourceTree = SOURCE_ROOT; };
 		1AE7B4E81D09E95E00D0DC9F /* 1Cast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1Cast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE7B4FF1D09E95F00D0DC9F /* 1Cast.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1Cast.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE7B50A1D09E95F00D0DC9F /* 1Cast.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1Cast.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,9 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				1AEA26F21D380C1100B3CD75 /* IntroScrollView.swift */,
-				1AEA26F31D380C1100B3CD75 /* PopupView.storyboard */,
 				1AEA26F41D380C1100B3CD75 /* PopupView.swift */,
+				1AEA26F31D380C1100B3CD75 /* PopupView.storyboard */,
 				1AEA26F51D380C1100B3CD75 /* SetupView.swift */,
+				1AC05A081D381B6D00ED59FD /* SetupView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC05A091D381B6D00ED59FD /* SetupView.xib in Resources */,
 				1A5CB7E61D380AE300A57213 /* Default-568h@2x.png in Resources */,
 				1AEA27041D380C5800B3CD75 /* Main.storyboard in Resources */,
 				1AEA27161D380FF400B3CD75 /* LaunchScreen.storyboard in Resources */,

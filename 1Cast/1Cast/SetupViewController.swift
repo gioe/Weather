@@ -9,15 +9,15 @@
 import UIKit
 import CoreLocation
 
-class SetupViewController: UIViewController {
+class SetupViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var baseViewController: SetupView!
-    
-    @IBOutlet weak var textInput: UITextField!
+    @IBOutlet weak var baseViewController: SetupView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        baseViewController.inputTextField.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SetupViewController.keyboardWasShown), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SetupViewController.keyboardWasHidden), name: UIKeyboardDidHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,10 +25,16 @@ class SetupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func submitResponse(sender: AnyObject) {
-        _ = sender as! UIButton
-//        baseViewController.handleQuestionSubmissionWithReponse = { _ in
-//        
-//        }
+    func keyboardWasShown() {
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.baseViewController.frame.origin.y -= 100
+        })
     }
+    
+    func keyboardWasHidden() {
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.baseViewController.frame.origin.y += 100
+        })
+    }
+
 }
