@@ -9,15 +9,19 @@
 import UIKit
 import CoreLocation
 
-class SetupViewController: UIViewController, UITextFieldDelegate {
+private let MainViewSegueIdentifier = "showMainView"
+
+class SetupViewController: UIViewController, UITextFieldDelegate, MessageDelegate {
     
+    var currentUser = User()
+
     @IBOutlet weak var baseViewController: SetupView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         baseViewController.inputTextField.delegate = self
+        baseViewController.delegate = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SetupViewController.keyboardWasShown), name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SetupViewController.keyboardWasHidden), name: UIKeyboardDidHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,11 +34,15 @@ class SetupViewController: UIViewController, UITextFieldDelegate {
             self.baseViewController.frame.origin.y -= 100
         })
     }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
-    func keyboardWasHidden() {
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.baseViewController.frame.origin.y += 100
-        })
+    func pushNextView() {
+        performSegueWithIdentifier(MainViewSegueIdentifier, sender: nil)
+        currentUser.loginStatus = .PastSetup
     }
 
 }

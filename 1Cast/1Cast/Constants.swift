@@ -13,7 +13,7 @@ struct Constants {
     static let ForecastAPIKey = "fa7fa58be6b3961fdd2486e753b0136d"
     static let GoogleAPIKey = "AIzaSyC19E6BSRQWmt-G7Lws5eZqIPiHYF8di0k"
     static let forecastRootURL = "https://api.forecast.io/forecast/\(ForecastAPIKey)/"
-    static let googleRootURL = "http://maps.googleapis.com/maps/api/geocode/json?"
+    static let googleRootURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
  
 
 }

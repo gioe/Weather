@@ -52,10 +52,8 @@ extension APIHelper {
     }
 
     static func makeJSONRequest(endpoint : APIHelper, success:(JSON) -> Void, failure:(NSError) -> Void) {
+        print(endpoint.url)
         Alamofire.request(endpoint.alamofireMethod, endpoint.url).responseJSON { (responseObject) -> Void in
-            
-            print(responseObject) //it will print the response success/failure anything
-            
             if responseObject.result.isSuccess {
                 let resJson = JSON(responseObject.result.value!)
                 success(resJson)

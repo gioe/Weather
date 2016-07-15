@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Question</key>
+		<string>What is your zipcode?</string>
+		<key>MainKey</key>
+		<string>Zipcode</string>
+		<key>ButtonTitle</key>
+		<string>Next Question!</string>
+	</dict>
+	<dict>
+		<key>Question</key>
+		<string>What time would you like to be notified?</string>
+		<key>MainKey</key>
+		<string>NotificationTime</string>
+		<key>ButtonTitle</key>
+		<string>Done!</string>
+	</dict>
+</array>
+</plist>

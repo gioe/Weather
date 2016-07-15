@@ -58,7 +58,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         container.closeHandler = { bool in
             if bool {
                 self.performSegueWithIdentifier(SetupSegueIdentifier, sender: nil)
-                self.currentUser.loginStatus = .LoggedIn
+                self.currentUser.loginStatus = .NotPastSetup
             }
             
             popup.dismiss()

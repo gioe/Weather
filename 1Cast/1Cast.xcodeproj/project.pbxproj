@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A5CB7E61D380AE300A57213 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */; };
+		1A6D37FF1D393704002DAD9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D37FE1D393704002DAD9B /* SettingsViewController.swift */; };
 		1AC05A091D381B6D00ED59FD /* SetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC05A081D381B6D00ED59FD /* SetupView.xib */; };
+		1AC1B7431D38646E005DA71A /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1B7421D38646E005DA71A /* Questions.plist */; };
+		1AC1B7451D391242005DA71A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1B7441D391242005DA71A /* MainViewController.swift */; };
+		1AC1B74B1D392CDB005DA71A /* Skycons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1B74A1D392CDB005DA71A /* Skycons.swift */; };
 		1AEA26EB1D380BEC00B3CD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AEA26EA1D380BEC00B3CD75 /* Assets.xcassets */; };
 		1AEA26EF1D380C0100B3CD75 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA26EC1D380C0100B3CD75 /* APIHelper.swift */; };
 		1AEA26F01D380C0100B3CD75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA26ED1D380C0100B3CD75 /* Constants.swift */; };
@@ -47,7 +51,11 @@
 /* Begin PBXFileReference section */
 		09A2612F4B12FF60DD18D456 /* Pods_1Cast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_1Cast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1A6D37FE1D393704002DAD9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		1AC05A081D381B6D00ED59FD /* SetupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupView.xib; sourceTree = SOURCE_ROOT; };
+		1AC1B7421D38646E005DA71A /* Questions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Questions.plist; sourceTree = SOURCE_ROOT; };
+		1AC1B7441D391242005DA71A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		1AC1B74A1D392CDB005DA71A /* Skycons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skycons.swift; sourceTree = SOURCE_ROOT; };
 		1AE7B4E81D09E95E00D0DC9F /* 1Cast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1Cast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE7B4FF1D09E95F00D0DC9F /* 1Cast.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1Cast.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE7B50A1D09E95F00D0DC9F /* 1Cast.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1Cast.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +128,7 @@
 			children = (
 				1AEA26EA1D380BEC00B3CD75 /* Assets.xcassets */,
 				1AEA26E81D380BE200B3CD75 /* Info.plist */,
+				1AC1B7421D38646E005DA71A /* Questions.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 			children = (
 				1AEA26FC1D380C3A00B3CD75 /* IntroViewController.swift */,
 				1AEA26FD1D380C3A00B3CD75 /* SetupViewController.swift */,
+				1AC1B7441D391242005DA71A /* MainViewController.swift */,
+				1A6D37FE1D393704002DAD9B /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 				1AEA26F31D380C1100B3CD75 /* PopupView.storyboard */,
 				1AEA26F51D380C1100B3CD75 /* SetupView.swift */,
 				1AC05A081D381B6D00ED59FD /* SetupView.xib */,
+				1AC1B74A1D392CDB005DA71A /* Skycons.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -160,7 +172,6 @@
 				1AEA26EE1D380C0100B3CD75 /* LoginHandler.swift */,
 			);
 			name = Services;
-			path = Weather;
 			sourceTree = "<group>";
 		};
 		1AE7B4DF1D09E95E00D0DC9F = {
@@ -168,7 +179,6 @@
 			children = (
 				1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */,
 				1AE7B4EA1D09E95E00D0DC9F /* 1Cast */,
-				1AB6380B1D36D91600176FC1 /* Services */,
 				1AE7B4E91D09E95E00D0DC9F /* Products */,
 				C4537DF2D7030FFA88604A97 /* Pods */,
 				1A39FE7CAF6E81E916F449D1 /* Frameworks */,
@@ -194,6 +204,7 @@
 				1AB637F21D36979B00176FC1 /* Models */,
 				1AB637F11D36979400176FC1 /* Views */,
 				1AB637F01D36978500176FC1 /* Controllers */,
+				1AB6380B1D36D91600176FC1 /* Services */,
 				1AA3C52F1D37C0F500858120 /* Supporting Files */,
 			);
 			name = 1Cast;
@@ -331,6 +342,7 @@
 				1AC05A091D381B6D00ED59FD /* SetupView.xib in Resources */,
 				1A5CB7E61D380AE300A57213 /* Default-568h@2x.png in Resources */,
 				1AEA27041D380C5800B3CD75 /* Main.storyboard in Resources */,
+				1AC1B7431D38646E005DA71A /* Questions.plist in Resources */,
 				1AEA27161D380FF400B3CD75 /* LaunchScreen.storyboard in Resources */,
 				1AEA26EB1D380BEC00B3CD75 /* Assets.xcassets in Resources */,
 				1AEA26F71D380C1100B3CD75 /* PopupView.storyboard in Resources */,
@@ -486,10 +498,13 @@
 				1AEA26F01D380C0100B3CD75 /* Constants.swift in Sources */,
 				1AEA26FE1D380C3A00B3CD75 /* IntroViewController.swift in Sources */,
 				1AEA26FF1D380C3A00B3CD75 /* SetupViewController.swift in Sources */,
+				1AC1B74B1D392CDB005DA71A /* Skycons.swift in Sources */,
 				1AEA26F61D380C1100B3CD75 /* IntroScrollView.swift in Sources */,
 				1AEA26F91D380C1100B3CD75 /* SetupView.swift in Sources */,
 				1AEA27011D380C4900B3CD75 /* AppDelegate.swift in Sources */,
 				1AEA26EF1D380C0100B3CD75 /* APIHelper.swift in Sources */,
+				1AC1B7451D391242005DA71A /* MainViewController.swift in Sources */,
+				1A6D37FF1D393704002DAD9B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

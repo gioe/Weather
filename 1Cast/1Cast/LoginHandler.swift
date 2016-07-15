@@ -1,3 +1,4 @@
+
 //
 //  LoginHandler.swift
 //  3Cast
@@ -8,24 +9,33 @@
 
 import UIKit
 import Foundation
+import CoreLocation
+
 private let LoginStatusKeyForDefaults = "Login Status"
+private let LatitudeKeyForDefaults = "Latitude"
+private let LongitudeKeyForDefaults = "Longitude"
 
 enum LoginStatus : Int {
     
     //only two possible statuses
-    case LoggedOut = 0
-    case LoggedIn = 1
+    case Onboarding = 0
+    case NotPastSetup = 1
+    case PastSetup = 2
     
     //determine what the initial view controller is for the delegate when the app launches
     var associatedViewController: UIViewController {
         switch self {
-        case .LoggedIn:
+        case .Onboarding:
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("IntroScrollView") as UIViewController
+            return viewController
+        case .NotPastSetup:
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("SetupViewController") as UIViewController
             return viewController
-        default:
+        case .PastSetup:
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("IntroScrollView") as UIViewController
+            let viewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as UIViewController
             return viewController
         }
     }
@@ -35,14 +45,31 @@ enum LoginStatus : Int {
 struct User {
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    //could have used core data here but using the defaults instead so we don't overcomplicate things. defaults only needs to tell us whether the user is logged in or not so we simulate a boolean and compute the property as we go
+    var location : CLLocationCoordinate2D?{
+        get {
+            
+            if let latitude = defaults.objectForKey(LatitudeKeyForDefaults){
+                let location = CLLocationCoordinate2D.init(latitude: latitude as! CLLocationDegrees, longitude: defaults.objectForKey(LongitudeKeyForDefaults) as! CLLocationDegrees)
+                return location
+            } else {
+                return nil
+            }
+        }
+        
+        set(newLocation){
+            defaults.setObject(newLocation?.latitude, forKey: LatitudeKeyForDefaults)
+            defaults.setObject(newLocation?.longitude, forKey: LongitudeKeyForDefaults)
+        }
+        
+    }
+    
     
     var loginStatus : LoginStatus {
         get {
             if defaults.objectForKey (LoginStatusKeyForDefaults) != nil {
                 return LoginStatus.init(rawValue: defaults.integerForKey(LoginStatusKeyForDefaults))!
             } else {
-                return .LoggedOut
+                return .Onboarding
             }
         }
         set(newLoginStatus){
