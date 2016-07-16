@@ -62,7 +62,6 @@ protocol MessageDelegate {
         return view
     }
     
-    
     @IBAction func saveResponse(sender: AnyObject) {
         
         currentIndex += 1

@@ -9,12 +9,12 @@
         <!--Intro View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="IntroScrollView" id="BYZ-38-t0r" customClass="IntroViewController" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroScrollView" id="BYZ-38-t0r" customClass="IntroViewController" customModule="OneCast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZa-AW-YbN"/>
                         <viewControllerLayoutGuide type="bottom" id="Bz5-Fl-dlC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YpG-K4-dwb" customClass="IntroScrollView" customModule="_Cast" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="YpG-K4-dwb" customClass="IntroScrollView" customModule="OneCast" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -83,7 +83,7 @@
         <!--Setup View Controller-->
         <scene sceneID="rbf-FT-C6R">
             <objects>
-                <viewController storyboardIdentifier="SetupViewController" id="SFp-8I-gE1" customClass="SetupViewController" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetupViewController" id="SFp-8I-gE1" customClass="SetupViewController" customModule="OneCast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EWm-hg-XOt"/>
                         <viewControllerLayoutGuide type="bottom" id="Uy9-9w-gCz"/>
@@ -92,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yD8-cc-iMV" customClass="SetupView" customModule="_Cast" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yD8-cc-iMV" customClass="SetupView" customModule="OneCast" customModuleProvider="target">
                                 <rect key="frame" x="40" y="164" width="240" height="240"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -119,7 +119,7 @@
         <!--Settings-->
         <scene sceneID="mEM-vv-Qcf">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" definesPresentationContext="YES" id="yZj-Mi-OLo" customClass="SettingsViewController" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" definesPresentationContext="YES" id="yZj-Mi-OLo" customClass="SettingsViewController" customModule="OneCast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jCj-Bs-kj7"/>
                         <viewControllerLayoutGuide type="bottom" id="QQo-DW-leZ"/>
@@ -127,7 +127,29 @@
                     <view key="view" contentMode="scaleToFill" id="3D5-Sw-w7r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFZ-BT-T9s" customClass="SettingSubView" customModule="OneCast" customModuleProvider="target">
+                                <rect key="frame" x="36" y="69" width="248" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lv-XE-sxd" customClass="SettingSubView" customModule="OneCast" customModuleProvider="target">
+                                <rect key="frame" x="36" y="262" width="248" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.96862745100000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Lv-XE-sxd" firstAttribute="top" secondItem="eFZ-BT-T9s" secondAttribute="bottom" constant="65" id="44G-WD-U2h"/>
+                            <constraint firstItem="eFZ-BT-T9s" firstAttribute="centerX" secondItem="3D5-Sw-w7r" secondAttribute="centerX" id="HxE-0a-eBH"/>
+                            <constraint firstItem="8Lv-XE-sxd" firstAttribute="leading" secondItem="3D5-Sw-w7r" secondAttribute="leadingMargin" constant="20" id="L10-EC-nGe"/>
+                            <constraint firstItem="eFZ-BT-T9s" firstAttribute="leading" secondItem="3D5-Sw-w7r" secondAttribute="leadingMargin" constant="20" id="d3p-W0-AYQ"/>
+                            <constraint firstItem="8Lv-XE-sxd" firstAttribute="top" secondItem="3D5-Sw-w7r" secondAttribute="top" constant="262" id="d4U-hk-rLd"/>
+                            <constraint firstItem="eFZ-BT-T9s" firstAttribute="top" secondItem="jCj-Bs-kj7" secondAttribute="bottom" constant="49" id="qtn-ks-vQO"/>
+                            <constraint firstItem="QQo-DW-leZ" firstAttribute="top" secondItem="8Lv-XE-sxd" secondAttribute="bottom" constant="129" id="tID-4c-2Tn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eFZ-BT-T9s" secondAttribute="trailing" constant="20" id="tmN-wb-pER"/>
+                            <constraint firstItem="8Lv-XE-sxd" firstAttribute="centerX" secondItem="3D5-Sw-w7r" secondAttribute="centerX" id="vuh-O9-npi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Lv-XE-sxd" secondAttribute="trailing" constant="20" id="z2F-e3-Kq7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="0Fd-tu-ZDi" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
@@ -144,7 +166,7 @@
         <!--Current Weather-->
         <scene sceneID="ddn-hS-uUF">
             <objects>
-                <viewController id="RtI-CG-GD4" customClass="MainViewController" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RtI-CG-GD4" customClass="MainViewController" customModule="OneCast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nzn-KL-ySD"/>
                         <viewControllerLayoutGuide type="bottom" id="Xuh-RK-FO4"/>
@@ -153,7 +175,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-71-lFO" customClass="SKYIconView" customModule="_Cast" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-71-lFO" customClass="SKYIconView" customModule="OneCast" customModuleProvider="target">
                                 <rect key="frame" x="36" y="87" width="248" height="208"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>

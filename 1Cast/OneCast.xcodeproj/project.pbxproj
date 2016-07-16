@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A5CB7E61D380AE300A57213 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */; };
+		1A5F5C0E1D39D25E004B3971 /* SettingSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A5F5C0D1D39D25E004B3971 /* SettingSubView.xib */; };
+		1A5F5C101D39D277004B3971 /* SettingSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F5C0F1D39D277004B3971 /* SettingSubView.swift */; };
 		1A6D37FF1D393704002DAD9B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D37FE1D393704002DAD9B /* SettingsViewController.swift */; };
 		1A6D38011D3968EB002DAD9B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D38001D3968EB002DAD9B /* Forecast.swift */; };
 		1A6D38031D3968FE002DAD9B /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D38021D3968FE002DAD9B /* Coordinate.swift */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		09A2612F4B12FF60DD18D456 /* Pods_1Cast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_1Cast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5CB7E51D380AE300A57213 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1A5F5C0D1D39D25E004B3971 /* SettingSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingSubView.xib; sourceTree = SOURCE_ROOT; };
+		1A5F5C0F1D39D277004B3971 /* SettingSubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingSubView.swift; sourceTree = SOURCE_ROOT; };
 		1A6D37FE1D393704002DAD9B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		1A6D38001D3968EB002DAD9B /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = SOURCE_ROOT; };
 		1A6D38021D3968FE002DAD9B /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = SOURCE_ROOT; };
@@ -157,6 +161,8 @@
 				1AEA26F51D380C1100B3CD75 /* SetupView.swift */,
 				1AC05A081D381B6D00ED59FD /* SetupView.xib */,
 				1AC1B74A1D392CDB005DA71A /* Skycons.swift */,
+				1A5F5C0F1D39D277004B3971 /* SettingSubView.swift */,
+				1A5F5C0D1D39D25E004B3971 /* SettingSubView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				1AC1B7431D38646E005DA71A /* Questions.plist in Resources */,
 				1AEA27161D380FF400B3CD75 /* LaunchScreen.storyboard in Resources */,
 				1AEA26EB1D380BEC00B3CD75 /* Assets.xcassets in Resources */,
+				1A5F5C0E1D39D25E004B3971 /* SettingSubView.xib in Resources */,
 				1AEA26F71D380C1100B3CD75 /* PopupView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEA26F81D380C1100B3CD75 /* PopupView.swift in Sources */,
+				1A5F5C101D39D277004B3971 /* SettingSubView.swift in Sources */,
 				1AEA26F11D380C0100B3CD75 /* LoginHandler.swift in Sources */,
 				1AEA26F01D380C0100B3CD75 /* Constants.swift in Sources */,
 				1AEA26FE1D380C3A00B3CD75 /* IntroViewController.swift in Sources */,
