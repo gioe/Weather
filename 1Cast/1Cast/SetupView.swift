@@ -64,13 +64,11 @@ protocol MessageDelegate {
     
     @IBAction func saveResponse(sender: AnyObject) {
         
-        currentIndex += 1
-        
         switch currentIndex {
             
-        case 1:
+        case 0:
             
-            guard inputTextField.text != nil else {
+            guard inputTextField.text?.characters.count == 5 else {
                 return
             }
             
@@ -86,11 +84,11 @@ protocol MessageDelegate {
             
             inputTextField.text=""
             inputTextField.resignFirstResponder()
-            headerLabel.text = questionsArray[currentIndex]["Question"] as? String
-            submitButton.setTitle(questionsArray[currentIndex]["ButtonTitle"] as? String, forState: .Normal)
+            headerLabel.text = questionsArray[currentIndex + 1]["Question"] as? String
+            submitButton.setTitle(questionsArray[currentIndex + 1]["ButtonTitle"] as? String, forState: .Normal)
+            currentIndex += 1
             
-            
-        case 2:
+        case 1:
             
             guard inputTextField.text != nil else {
                 return

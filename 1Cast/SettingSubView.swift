@@ -8,14 +8,18 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 @IBDesignable class SettingSubView: UIView {
   
     var view: UIView!
+    var currentUser = User()
     let defaults = NSUserDefaults.standardUserDefaults()
-    var textField : UITextField!
-    var settingValueLabel: UILabel!
-   
+    var textField : UITextField = UITextField()
+    var newLabel : UILabel = UILabel()
+    var labelFrame : CGRect?
+    @IBOutlet weak var valueLabel: UILabel!
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     override init(frame: CGRect) {
@@ -30,6 +34,7 @@ import UIKit
     
     func setupView() {
         view = loadViewFromNib()
+        labelFrame = valueLabel.frame
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         addSubview(view)
@@ -46,38 +51,108 @@ import UIKit
         let button = sender as! UIButton
         switch button.titleLabel!.text! {
         case "Done":
-            button.setTitle("Change", forState: UIControlState.Normal)
-            switch button.tag {
-                case 0:
-                    textField.removeFromSuperview()
-                    self.addSubview(settingValueLabel)
-                    settingValueLabel.text = defaults.stringForKey(Constants.ZipCodeKeyForDefaults)
-                case 1:
-                    textField.removeFromSuperview()
-                    self.addSubview(settingValueLabel)
-                    settingValueLabel.text = defaults.stringForKey(Constants.NotificationTimeKeyForDefaults)
-                default:
-                    break
-            }
+            button.setTitle("Edit", forState: UIControlState.Normal)
+            handleValueChangeDone(button.tag)
         default:
             button.setTitle("Done", forState: UIControlState.Normal)
-            switch button.tag {
-                case 0:
-                    textField.frame = settingValueLabel.frame
-                    textField.backgroundColor = UIColor.whiteColor()
-                    textField.borderStyle = UITextBorderStyle.RoundedRect
-                    settingValueLabel.removeFromSuperview()
-                    self.addSubview(textField)
-                case 1:
-                    textField.frame = settingValueLabel.frame
-                    textField.backgroundColor = UIColor.whiteColor()
-                    textField.borderStyle = UITextBorderStyle.RoundedRect
-                    settingValueLabel.removeFromSuperview()
-                    self.addSubview(textField)
-            default:
-                    break
-            }
+            handleEditRequest(button.tag)
         }
+    }
+    
+    func handleEditRequest(tagValue : Int){
+        switch tagValue {
+        case 0:
+            
+            textField.frame = labelFrame!
+            textField.backgroundColor = UIColor.whiteColor()
+            textField.borderStyle = UITextBorderStyle.RoundedRect
+            textField.text = currentUser.zipCode
+            
+            if let oldLabel = valueLabel{
+                oldLabel.removeFromSuperview()
+            } else {
+                newLabel.removeFromSuperview()
+            }
+            
+            addSubview(textField)
+            textField.becomeFirstResponder()
+            
+        case 1:
+            
+            textField.frame = labelFrame!
+            textField.backgroundColor = UIColor.whiteColor()
+            textField.borderStyle = UITextBorderStyle.RoundedRect
+            textField.text = currentUser.notificationTime
+            
+            if let oldLabel = valueLabel{
+                oldLabel.removeFromSuperview()
+            } else {
+                newLabel.removeFromSuperview()
+            }
+            
+            let datePickerView : UIDatePicker = UIDatePicker()
+            datePickerView.datePickerMode = UIDatePickerMode.Time
+            datePickerView.frame = CGRectMake(0, 0, 320, 140)
+            textField.inputView = datePickerView
+            datePickerView.addTarget(self, action: #selector(SettingSubView.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+            addSubview(textField)
+            textField.becomeFirstResponder()
+
+        default:
+            break
+        }
+    }
+    
+    func handleValueChangeDone(tagValue : Int) {
+        switch tagValue {
+            case 0:
+                
+                guard textField.text?.characters.count == 5 else {
+                    return
+                }
+                
+                newLabel.frame = labelFrame!
+                newLabel.font = UIFont (name: "Futura", size: 22)
+                currentUser.zipCode = textField.text
+                textField.removeFromSuperview()
+                newLabel.text = currentUser.zipCode
+                
+                APIHelper.makeJSONRequest(APIHelper.GetLocationFromZipCode(zipCode: currentUser.zipCode), success: { (json) in
+                    let location = json["results"].arrayValue[0]["geometry"]["location"]
+                    let latitude = location["lat"].doubleValue
+                    let longitude = location["lng"].doubleValue
+                    self.currentUser.location = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude)
+                    }, failure: { (error) in
+                })
+                
+                addSubview(newLabel)
+            
+            case 1:
+                
+                guard textField.text?.characters.count > 0 else {
+                    return
+                }
+                
+                newLabel.frame = labelFrame!
+                newLabel.font = UIFont (name: "Futura", size: 22)
+                currentUser.notificationTime = textField.text
+                textField.removeFromSuperview()
+                newLabel.text = currentUser.notificationTime
+                addSubview(newLabel)
+            
+        default:
+    
+            break
+            
+        }
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        textField.text = dateFormatter.stringFromDate(sender.date)
+
     }
 }
 

@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     var currentUser = User()
-
+    var currentZip : String?
     @IBOutlet weak var weatherImage: SKYIconView! {
         didSet{
             self.weatherImage.play()
@@ -22,20 +22,16 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentZip = currentUser.zipCode
         weatherImage.hidden = true
-        APIHelper.makeJSONRequest(APIHelper.GetForecastForCoordinate(coordinate: currentUser.location!), success: { (json) in
-            print(json)
-            let currentSummary = json["hourly"]["data"][0]["icon"].stringValue
-            let currentTime = json["hourly"]["data"][0]["time"].doubleValue
-            let currentTemperature = json["hourly"]["data"][0]["apparentTemperature"].doubleValue
-            self.weatherImage.setType = self.checkStringForWeather(currentSummary, time:self.timeStringFromUnixTime(currentTime))
-            self.weatherImage.play()
-            self.weatherImage.hidden = false
-            self.tempLabel.text = "\(String(Int(currentTemperature)))℉"
-            
-        }) { (error) in
-        }
+        makeWeatherCall()
 
+    }
+    override func viewWillAppear(animated: Bool) {
+        if currentZip != currentUser.zipCode{
+            currentZip = currentUser.zipCode
+            makeWeatherCall()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,5 +66,20 @@ class MainViewController: UIViewController {
         // Returns date formatted as 12 hour time.
         dayTimePeriodFormatter.dateFormat = "hh:mm a"
         return dayTimePeriodFormatter.stringFromDate(date)
+    }
+    
+    func makeWeatherCall(){
+        APIHelper.makeJSONRequest(APIHelper.GetForecastForCoordinate(coordinate: currentUser.location!), success: { (json) in
+            print(json)
+            let currentSummary = json["hourly"]["data"][0]["icon"].stringValue
+            let currentTime = json["hourly"]["data"][0]["time"].doubleValue
+            let currentTemperature = json["hourly"]["data"][0]["apparentTemperature"].doubleValue
+            self.weatherImage.setType = self.checkStringForWeather(currentSummary, time:self.timeStringFromUnixTime(currentTime))
+            self.weatherImage.play()
+            self.weatherImage.hidden = false
+            self.tempLabel.text = "\(String(Int(currentTemperature)))℉"
+            
+        }) { (error) in
+        }
     }
 }
