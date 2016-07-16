@@ -11,11 +11,6 @@ import UIKit
 import Foundation
 import CoreLocation
 
-private let LoginStatusKeyForDefaults = "Login Status"
-private let LatitudeKeyForDefaults = "Latitude"
-private let LongitudeKeyForDefaults = "Longitude"
-private let NotificationTimeKeyForDefault = "Notification Time"
-
 enum LoginStatus : Int {
     
     //only two possible statuses
@@ -46,18 +41,32 @@ enum LoginStatus : Int {
 struct User {
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    var zipCode : String?{
+        get {
+            
+            if let zipCode = defaults.stringForKey(Constants.ZipCodeKeyForDefaults){
+                return zipCode             } else {
+                return nil
+            }
+        }
+        
+        set(newZip){
+            defaults.setObject(newZip, forKey: Constants.ZipCodeKeyForDefaults)
+        }
+    }
+    
     var notificationTime : String?{
         get {
             
-            if let time = defaults.objectForKey(NotificationTimeKeyForDefault){
-                return time as? String
+            if let time = defaults.stringForKey(Constants.NotificationTimeKeyForDefaults){
+                return time
             } else {
                 return nil
             }
         }
         
         set(newtime){
-            defaults.setObject(newtime, forKey: NotificationTimeKeyForDefault)
+            defaults.setObject(newtime, forKey: Constants.NotificationTimeKeyForDefaults)
         }
     }
 
@@ -65,8 +74,8 @@ struct User {
     var location : CLLocationCoordinate2D?{
         get {
             
-            if let latitude = defaults.objectForKey(LatitudeKeyForDefaults){
-                let location = CLLocationCoordinate2D.init(latitude: latitude as! CLLocationDegrees, longitude: defaults.objectForKey(LongitudeKeyForDefaults) as! CLLocationDegrees)
+            if let latitude = defaults.objectForKey(Constants.LatitudeKeyForDefaults){
+                let location = CLLocationCoordinate2D.init(latitude: latitude as! CLLocationDegrees, longitude: defaults.objectForKey(Constants.LongitudeKeyForDefaults) as! CLLocationDegrees)
                 return location
             } else {
                 return nil
@@ -74,8 +83,8 @@ struct User {
         }
         
         set(newLocation){
-            defaults.setObject(newLocation?.latitude, forKey: LatitudeKeyForDefaults)
-            defaults.setObject(newLocation?.longitude, forKey: LongitudeKeyForDefaults)
+            defaults.setObject(newLocation?.latitude, forKey: Constants.LatitudeKeyForDefaults)
+            defaults.setObject(newLocation?.longitude, forKey: Constants.LongitudeKeyForDefaults)
         }
         
     }
@@ -83,14 +92,14 @@ struct User {
     
     var loginStatus : LoginStatus {
         get {
-            if defaults.objectForKey (LoginStatusKeyForDefaults) != nil {
-                return LoginStatus.init(rawValue: defaults.integerForKey(LoginStatusKeyForDefaults))!
+            if defaults.objectForKey (Constants.LoginStatusKeyForDefaults) != nil {
+                return LoginStatus.init(rawValue: defaults.integerForKey(Constants.LoginStatusKeyForDefaults))!
             } else {
                 return .Onboarding
             }
         }
         set(newLoginStatus){
-            defaults.setObject(newLoginStatus.rawValue, forKey: LoginStatusKeyForDefaults)
+            defaults.setObject(newLoginStatus.rawValue, forKey: Constants.LoginStatusKeyForDefaults)
         }
     }
 }

@@ -9,8 +9,6 @@
 import UIKit
 import CoreLocation
 
-private let MainViewSegueIdentifier = "showMainView"
-
 class SetupViewController: UIViewController, UITextFieldDelegate, MessageDelegate {
     
     var currentUser = User()
@@ -42,7 +40,7 @@ class SetupViewController: UIViewController, UITextFieldDelegate, MessageDelegat
     }
     
     func pushNextView() {
-        performSegueWithIdentifier(MainViewSegueIdentifier, sender: nil)
+        performSegueWithIdentifier(Constants.MainViewSegueIdentifier, sender: nil)
         currentUser.loginStatus = .PastSetup
     }
 

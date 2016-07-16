@@ -69,7 +69,12 @@ protocol MessageDelegate {
         switch currentIndex {
             
         case 1:
-
+            
+            guard inputTextField.text != nil else {
+                return
+            }
+            
+            currentUser.zipCode = inputTextField.text
             APIHelper.makeJSONRequest(APIHelper.GetLocationFromZipCode(zipCode: inputTextField.text!), success: { (json) in
                 let location = json["results"].arrayValue[0]["geometry"]["location"]
                 let latitude = location["lat"].doubleValue
@@ -86,7 +91,12 @@ protocol MessageDelegate {
             
             
         case 2:
-            currentUser.notificationTime = inputTextField.text!
+            
+            guard inputTextField.text != nil else {
+                return
+            }
+            
+            currentUser.notificationTime = inputTextField.text
             delegate?.pushNextView()
             
         default: break

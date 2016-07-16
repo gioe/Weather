@@ -128,27 +128,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFZ-BT-T9s" customClass="SettingSubView" customModule="OneCast" customModuleProvider="target">
-                                <rect key="frame" x="36" y="69" width="248" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lv-XE-sxd" customClass="SettingSubView" customModule="OneCast" customModuleProvider="target">
-                                <rect key="frame" x="36" y="262" width="248" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="26" y="262" width="268" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFZ-BT-T9s" customClass="SettingSubView" customModule="OneCast" customModuleProvider="target">
+                                <rect key="frame" x="26" y="69" width="268" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.96862745100000003" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8Lv-XE-sxd" firstAttribute="top" secondItem="eFZ-BT-T9s" secondAttribute="bottom" constant="65" id="44G-WD-U2h"/>
                             <constraint firstItem="eFZ-BT-T9s" firstAttribute="centerX" secondItem="3D5-Sw-w7r" secondAttribute="centerX" id="HxE-0a-eBH"/>
-                            <constraint firstItem="8Lv-XE-sxd" firstAttribute="leading" secondItem="3D5-Sw-w7r" secondAttribute="leadingMargin" constant="20" id="L10-EC-nGe"/>
-                            <constraint firstItem="eFZ-BT-T9s" firstAttribute="leading" secondItem="3D5-Sw-w7r" secondAttribute="leadingMargin" constant="20" id="d3p-W0-AYQ"/>
+                            <constraint firstItem="8Lv-XE-sxd" firstAttribute="leading" secondItem="3D5-Sw-w7r" secondAttribute="leadingMargin" constant="10" id="L10-EC-nGe"/>
+                            <constraint firstItem="eFZ-BT-T9s" firstAttribute="leading" secondItem="3D5-Sw-w7r" secondAttribute="leadingMargin" constant="10" id="d3p-W0-AYQ"/>
                             <constraint firstItem="8Lv-XE-sxd" firstAttribute="top" secondItem="3D5-Sw-w7r" secondAttribute="top" constant="262" id="d4U-hk-rLd"/>
                             <constraint firstItem="eFZ-BT-T9s" firstAttribute="top" secondItem="jCj-Bs-kj7" secondAttribute="bottom" constant="49" id="qtn-ks-vQO"/>
                             <constraint firstItem="QQo-DW-leZ" firstAttribute="top" secondItem="8Lv-XE-sxd" secondAttribute="bottom" constant="129" id="tID-4c-2Tn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eFZ-BT-T9s" secondAttribute="trailing" constant="20" id="tmN-wb-pER"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eFZ-BT-T9s" secondAttribute="trailing" constant="10" id="tmN-wb-pER"/>
                             <constraint firstItem="8Lv-XE-sxd" firstAttribute="centerX" secondItem="3D5-Sw-w7r" secondAttribute="centerX" id="vuh-O9-npi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8Lv-XE-sxd" secondAttribute="trailing" constant="20" id="z2F-e3-Kq7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Lv-XE-sxd" secondAttribute="trailing" constant="10" id="z2F-e3-Kq7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="0Fd-tu-ZDi" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
@@ -157,6 +157,10 @@
                         </connections>
                     </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="timeSettingView" destination="8Lv-XE-sxd" id="FKu-Xa-5dM"/>
+                        <outlet property="zipCodeView" destination="eFZ-BT-T9s" id="S10-a2-8Fe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjX-pp-TCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="FYf-jo-Jgz" customClass="RAMRightRotationAnimation" customModule="RAMAnimatedTabBarController"/>

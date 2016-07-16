@@ -9,8 +9,6 @@
 import UIKit
 import PopupController
 
-private let SetupSegueIdentifier = "showSetupView"
-
 class IntroViewController: UIViewController, UIScrollViewDelegate {
 
     var popView = PopupView()
@@ -57,7 +55,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         let container = PopupView.instance()
         container.closeHandler = { bool in
             if bool {
-                self.performSegueWithIdentifier(SetupSegueIdentifier, sender: nil)
+                self.performSegueWithIdentifier(Constants.SetupSegueIdentifier, sender: nil)
                 self.currentUser.loginStatus = .NotPastSetup
             }
             

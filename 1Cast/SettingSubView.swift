@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 @IBDesignable class SettingSubView: UIView {
-
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet weak var settingValueLabel: UILabel!
-    
+  
+    var view: UIView!
+    let defaults = NSUserDefaults.standardUserDefaults()
+    var textField : UITextField!
+    var settingValueLabel: UILabel!
+   
+    @IBOutlet weak var descriptionLabrel: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -39,6 +43,41 @@ import Foundation
     }
     
     @IBAction func changeSetting(sender: AnyObject) {
+        let button = sender as! UIButton
+        switch button.titleLabel!.text! {
+        case "Done":
+            button.setTitle("Change", forState: UIControlState.Normal)
+            switch button.tag {
+                case 0:
+                    textField.removeFromSuperview()
+                    self.addSubview(settingValueLabel)
+                    settingValueLabel.text = defaults.stringForKey(Constants.ZipCodeKeyForDefaults)
+                case 1:
+                    textField.removeFromSuperview()
+                    self.addSubview(settingValueLabel)
+                    settingValueLabel.text = defaults.stringForKey(Constants.NotificationTimeKeyForDefaults)
+                default:
+                    break
+            }
+        default:
+            button.setTitle("Done", forState: UIControlState.Normal)
+            switch button.tag {
+                case 0:
+                    textField.frame = settingValueLabel.frame
+                    textField.backgroundColor = UIColor.whiteColor()
+                    textField.borderStyle = UITextBorderStyle.RoundedRect
+                    settingValueLabel.removeFromSuperview()
+                    self.addSubview(textField)
+                case 1:
+                    textField.frame = settingValueLabel.frame
+                    textField.backgroundColor = UIColor.whiteColor()
+                    textField.borderStyle = UITextBorderStyle.RoundedRect
+                    settingValueLabel.removeFromSuperview()
+                    self.addSubview(textField)
+            default:
+                    break
+            }
+        }
     }
 }
 

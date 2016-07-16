@@ -21,19 +21,19 @@ import CoreLocation
 
 enum APIHelper {
     
-    case GetForecastForCoordinate(coordinate : CLLocationCoordinate2D)
-    case GetLocationFromZipCode(zipCode : String)
+    case GetForecastForCoordinate(coordinate : CLLocationCoordinate2D?)
+    case GetLocationFromZipCode(zipCode : String?)
     
     var url : String {
         switch self {
             
         case .GetForecastForCoordinate(let coordinate):
             
-            return "\(Constants.forecastRootURL)\(coordinate.latitude),\(coordinate.longitude)"
+            return "\(Constants.forecastRootURL)\(coordinate!.latitude),\(coordinate!.longitude)"
 
         case .GetLocationFromZipCode(let zipCode):
 
-            return "\(Constants.googleRootURL)\(zipCode)&key=\(Constants.GoogleAPIKey)"
+            return "\(Constants.googleRootURL)\(zipCode!)&key=\(Constants.GoogleAPIKey)"
 
         }
         
