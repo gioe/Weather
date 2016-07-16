@@ -16,7 +16,7 @@ import UIKit
     var textField : UITextField!
     var settingValueLabel: UILabel!
    
-    @IBOutlet weak var descriptionLabrel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     override init(frame: CGRect) {
         super.init(frame: frame)
