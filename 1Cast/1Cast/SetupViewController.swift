@@ -33,6 +33,7 @@ class SetupViewController: UIViewController, UITextFieldDelegate, MessageDelegat
         UIView.animateWithDuration(0.1, animations: { () -> Void in
             self.baseViewController.frame.origin.y -= 100
         })
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {

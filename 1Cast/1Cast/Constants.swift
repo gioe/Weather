@@ -14,6 +14,7 @@ struct Constants {
     static let GoogleAPIKey = "AIzaSyC19E6BSRQWmt-G7Lws5eZqIPiHYF8di0k"
     static let forecastRootURL = "https://api.forecast.io/forecast/\(ForecastAPIKey)/"
     static let googleRootURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
+    static let DatePickerShownNotification = "Date Picker Shown"
  
 
 }

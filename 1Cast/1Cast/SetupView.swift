@@ -70,7 +70,7 @@ protocol MessageDelegate {
         switch currentIndex {
             
         case 1:
-            
+
             APIHelper.makeJSONRequest(APIHelper.GetLocationFromZipCode(zipCode: inputTextField.text!), success: { (json) in
                 let location = json["results"].arrayValue[0]["geometry"]["location"]
                 let latitude = location["lat"].doubleValue
@@ -79,23 +79,48 @@ protocol MessageDelegate {
                 }, failure: { (error) in
                     
             })
-
+            
+            inputTextField.text=""
+            inputTextField.resignFirstResponder()
             headerLabel.text = questionsArray[currentIndex]["Question"] as? String
             submitButton.setTitle(questionsArray[currentIndex]["ButtonTitle"] as? String, forState: .Normal)
-           inputTextField.removeFromSuperview()
-            let datePicker = UIDatePicker.init(frame: CGRectMake(inputTextField.frame.origin.x, inputTextField.frame.origin.y, inputTextField.frame.size.width, inputTextField.frame.size.height * 2))
-            datePicker.datePickerMode = .Time
-            inputTextField.removeFromSuperview()
-            addSubview(datePicker)
+            
             
         case 2:
+            currentUser.notificationTime = inputTextField.text!
             delegate?.pushNextView()
             
         default: break
             
         }
+    }
+    
+    
+    @IBAction func textFieldEditing(sender: UITextField) {
+        switch currentIndex {
+            
+        case 0:
+            sender.keyboardType = .NumberPad
+        case 1:
+            let datePickerView : UIDatePicker = UIDatePicker()
+            datePickerView.datePickerMode = UIDatePickerMode.Time
+            datePickerView.frame = CGRectMake(0, 0, 320, 140)
+            sender.inputView = datePickerView
+            datePickerView.addTarget(self, action: #selector(SetupView.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+        default:
+            break
+        }
 
     }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        inputTextField.text = dateFormatter.stringFromDate(sender.date)
+        
+    }
+    
 }
 
 

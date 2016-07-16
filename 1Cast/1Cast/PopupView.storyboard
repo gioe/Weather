@@ -9,12 +9,12 @@
         <!--Popup View-->
         <scene sceneID="ZPl-XE-XZo">
             <objects>
-                <viewController id="05Q-G7-9aQ" customClass="PopupView" customModule="_Cast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="05Q-G7-9aQ" customClass="PopupView" customModule="OneCast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n5c-fn-lEd"/>
                         <viewControllerLayoutGuide type="bottom" id="kWo-hi-e32"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e1J-Ea-8aa">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="e1J-Ea-8aa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -45,8 +45,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rml-o9-zK7">
-                                <rect key="frame" x="30" y="70" width="540" height="66.5"/>
-                                <string key="text">Once we get your location and 1Cast settings, we want to be able to notify you of the weather conditions automatically. To do that, we need your permission to send push notifications. Will you grant it?</string>
+                                <rect key="frame" x="30" y="70" width="540" height="67"/>
+                                <string key="text">Once we get your location and OneCast settings, we want to be able to notify you of the weather conditions automatically. To do that, we need your permission to send push notifications. Will you grant it?</string>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

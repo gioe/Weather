@@ -47,12 +47,11 @@ extension APIHelper {
         case .GetForecastForCoordinate:
             return .GET
         case .GetLocationFromZipCode:
-        return .GET
+            return .GET
         }
     }
 
     static func makeJSONRequest(endpoint : APIHelper, success:(JSON) -> Void, failure:(NSError) -> Void) {
-        print(endpoint.url)
         Alamofire.request(endpoint.alamofireMethod, endpoint.url).responseJSON { (responseObject) -> Void in
             if responseObject.result.isSuccess {
                 let resJson = JSON(responseObject.result.value!)

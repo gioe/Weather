@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetupView" customModule="_Cast" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetupView" customModule="OneCast" customModuleProvider="target">
             <connections>
                 <outlet property="headerLabel" destination="tBV-oU-Elv" id="l47-ip-N4T"/>
                 <outlet property="inputTextField" destination="nTX-D0-Frw" id="xNK-OE-9je"/>
@@ -22,6 +22,9 @@
                     <rect key="frame" x="28" y="85" width="144" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldEditing:" destination="-1" eventType="editingDidBegin" id="G8I-FI-6HU"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rY7-mG-zls">
                     <rect key="frame" x="28" y="144" width="144" height="46"/>

@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AE7B4E71D09E95E00D0DC9F"
-            BuildableName = "1Cast.app"
-            BlueprintName = "1Cast"
-            ReferencedContainer = "container:1Cast.xcodeproj">
+            BuildableName = "OneCast.app"
+            BlueprintName = "OneCast"
+            ReferencedContainer = "container:OneCast.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AE7B4E71D09E95E00D0DC9F"
-            BuildableName = "1Cast.app"
-            BlueprintName = "1Cast"
-            ReferencedContainer = "container:1Cast.xcodeproj">
+            BuildableName = "OneCast.app"
+            BlueprintName = "OneCast"
+            ReferencedContainer = "container:OneCast.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

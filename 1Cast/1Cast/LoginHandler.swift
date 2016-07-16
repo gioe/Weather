@@ -14,6 +14,7 @@ import CoreLocation
 private let LoginStatusKeyForDefaults = "Login Status"
 private let LatitudeKeyForDefaults = "Latitude"
 private let LongitudeKeyForDefaults = "Longitude"
+private let NotificationTimeKeyForDefault = "Notification Time"
 
 enum LoginStatus : Int {
     
@@ -44,6 +45,22 @@ enum LoginStatus : Int {
 
 struct User {
     let defaults = NSUserDefaults.standardUserDefaults()
+    
+    var notificationTime : String?{
+        get {
+            
+            if let time = defaults.objectForKey(NotificationTimeKeyForDefault){
+                return time as? String
+            } else {
+                return nil
+            }
+        }
+        
+        set(newtime){
+            defaults.setObject(newtime, forKey: NotificationTimeKeyForDefault)
+        }
+    }
+
     
     var location : CLLocationCoordinate2D?{
         get {

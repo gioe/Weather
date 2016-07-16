@@ -15,6 +15,7 @@ class PopupView: UIViewController, PopupContentViewController {
     var closeHandler: ((Bool) -> ())?
     
     override func viewDidLoad() {
+        self.view.layer.cornerRadius = 10.0
         super.viewDidLoad()
     }
     
