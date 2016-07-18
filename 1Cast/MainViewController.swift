@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         currentZip = currentUser.zipCode
         weatherImage.hidden = true
         makeWeatherCall()
+        updateUserCall()
 
     }
     override func viewWillAppear(animated: Bool) {
@@ -70,7 +71,6 @@ class MainViewController: UIViewController {
     
     func makeWeatherCall(){
         APIHelper.makeJSONRequest(APIHelper.GetForecastForCoordinate(coordinate: currentUser.location!), success: { (json) in
-            print(json)
             let currentSummary = json["hourly"]["data"][0]["icon"].stringValue
             let currentTime = json["hourly"]["data"][0]["time"].doubleValue
             let currentTemperature = json["hourly"]["data"][0]["apparentTemperature"].doubleValue
@@ -79,6 +79,13 @@ class MainViewController: UIViewController {
             self.weatherImage.hidden = false
             self.tempLabel.text = "\(String(Int(currentTemperature)))℉"
             
+        }) { (error) in
+        }
+    }
+    
+    func updateUserCall(){
+        APIHelper.makeJSONRequest(APIHelper.UpdateUser(user: currentUser), success: { (json) in
+            print(json)
         }) { (error) in
         }
     }

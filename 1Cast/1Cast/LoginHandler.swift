@@ -41,6 +41,8 @@ enum LoginStatus : Int {
 struct User {
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    var deviceToken : String?
+    
     var zipCode : String?{
         get {
             
