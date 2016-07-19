@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
         currentZip = currentUser.zipCode
         weatherImage.hidden = true
         makeWeatherCall()
-        updateUserCall()
 
     }
     override func viewWillAppear(animated: Bool) {
@@ -82,11 +81,5 @@ class MainViewController: UIViewController {
         }) { (error) in
         }
     }
-    
-    func updateUserCall(){
-        APIHelper.makeJSONRequest(APIHelper.UpdateUser(user: currentUser), success: { (json) in
-            print(json)
-        }) { (error) in
-        }
-    }
+
 }

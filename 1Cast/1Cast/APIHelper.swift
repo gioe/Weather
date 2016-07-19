@@ -23,7 +23,7 @@ enum APIHelper {
     
     case GetForecastForCoordinate(coordinate : CLLocationCoordinate2D?)
     case GetLocationFromZipCode(zipCode : String?)
-    case UpdateUser(user : User)
+    case CreateUser(user : User)
     
     var url : String {
         switch self {
@@ -36,9 +36,9 @@ enum APIHelper {
 
             return "\(Constants.googleRootURL)\(zipCode!)&key=\(Constants.GoogleAPIKey)"
         
-        case .UpdateUser( _):
+        case .CreateUser( _):
             
-            return "http://localhost:8000/api/user/?format=json"
+            return "http://localhost:8000/api/v1/token/?format=json"
         }
     }
     
@@ -48,8 +48,8 @@ enum APIHelper {
             return nil
         case .GetForecastForCoordinate( _):
            return nil
-        case .UpdateUser(let user):
-            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+        case .CreateUser(let user):
+            return ["device_token": user.deviceToken ?? "c2da7117a3fdec2f1c3a38321dc829f2de3e73de30a78f529c46c7471578d551", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
         }
     }
     
@@ -57,24 +57,23 @@ enum APIHelper {
 }
 
 extension APIHelper {
-    
     var alamofireMethod : Alamofire.Method {
         switch self {
         case .GetForecastForCoordinate:
             return .GET
         case .GetLocationFromZipCode:
             return .GET
-        case .UpdateUser:
-            return .POST
+        case .CreateUser:
+            return .PUT
         }
-        
     }
-
+    
     static func makeJSONRequest(endpoint : APIHelper, success:(JSON) -> Void, failure:(NSError) -> Void) {
-        if endpoint.alamofireMethod == .GET {
-            Alamofire.request(endpoint.alamofireMethod, endpoint.url).responseJSON { (responseObject) -> Void in
+        switch endpoint.alamofireMethod {
+        case .GET:
+            
+            Alamofire.request(endpoint.alamofireMethod, endpoint.url, parameters: endpoint.params, encoding: .JSON, headers: ["Content-type": "application/json"]).responseJSON { (responseObject) -> Void in
                 if responseObject.result.isSuccess {
-                    
                     let resJson = JSON(responseObject.result.value!)
                     success(resJson)
                 }
@@ -85,7 +84,9 @@ extension APIHelper {
                     failure(error)
                 }
             }
-        } else {
+            
+        case .PUT, .POST:
+            
             Alamofire.request(endpoint.alamofireMethod, endpoint.url, parameters: endpoint.params, encoding: .JSON, headers: ["Content-type": "application/json"]).responseString { (responseObject) -> Void in
                 if responseObject.result.isSuccess {
                     let resJson = JSON(responseObject.result.value!)
@@ -98,6 +99,11 @@ extension APIHelper {
                     failure(error)
                 }
             }
+            
+        default:
+            break
         }
+        
     }
+
 }

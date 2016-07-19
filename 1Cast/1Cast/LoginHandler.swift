@@ -43,6 +43,12 @@ struct User {
     
     var deviceToken : String?
     
+    var timeZone : String? {
+        get {
+            return NSTimeZone.localTimeZone().name
+        }
+    }
+    
     var zipCode : String?{
         get {
             

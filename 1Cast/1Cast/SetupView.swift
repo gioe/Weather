@@ -95,7 +95,10 @@ protocol MessageDelegate {
             }
             
             currentUser.notificationTime = inputTextField.text
-            delegate?.pushNextView()
+            APIHelper.makeJSONRequest(APIHelper.CreateUser(user: currentUser), success: { (json) in
+                self.delegate?.pushNextView()
+            }) { (error) in
+            }
             
         default: break
             
