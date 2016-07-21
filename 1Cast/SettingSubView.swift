@@ -143,8 +143,10 @@ import CoreLocation
         default:
     
             break
-            
         }
+        
+        updateUser()
+        
     }
     
     func datePickerValueChanged(sender:UIDatePicker) {
@@ -153,6 +155,12 @@ import CoreLocation
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         textField.text = dateFormatter.stringFromDate(sender.date)
 
+    }
+    
+    func updateUser(){
+        APIHelper.makeJSONRequest(APIHelper.UpdateUser(user: currentUser), success: { (json) in
+        }) { (error) in
+        }
     }
 }
 

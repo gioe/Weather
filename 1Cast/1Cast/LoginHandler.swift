@@ -41,11 +41,38 @@ enum LoginStatus : Int {
 struct User {
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    var deviceToken : String?
+    var deviceToken : String? {
+        get {
+            if let deviceToken = defaults.stringForKey(Constants.DeviceTokenKeyForDefaults){
+                return deviceToken
+            } else {
+                return nil
+            }
+        }
+        
+        set(newToken){
+            defaults.setObject(newToken, forKey: Constants.DeviceTokenKeyForDefaults)
+        }
+
+    }
     
     var timeZone : String? {
         get {
             return NSTimeZone.localTimeZone().name
+        }
+    }
+    
+    var userID : String? {
+        get {
+            if let userID = defaults.stringForKey(Constants.UserIDKeyForDefaults){
+                return userID
+            } else {
+                return nil
+            }
+        }
+        
+        set(newID){
+            defaults.setObject(newID, forKey: Constants.UserIDKeyForDefaults)
         }
     }
     
@@ -74,7 +101,23 @@ struct User {
         }
         
         set(newtime){
-            defaults.setObject(newtime, forKey: Constants.NotificationTimeKeyForDefaults)
+            
+            let offset = Double(NSTimeZone.localTimeZone().secondsFromGMT)
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            let date = dateFormatter.dateFromString(newtime!)
+            let finalDateString : String
+            
+            if offset > 0 {
+                let finalTime = date!.dateByAddingTimeInterval(offset)
+                finalDateString = dateFormatter.stringFromDate(finalTime)
+            } else {
+                let finalTime = date!.dateByAddingTimeInterval(offset * -1)
+                finalDateString = dateFormatter.stringFromDate(finalTime)
+            }
+            
+            defaults.setObject(finalDateString, forKey: Constants.NotificationTimeKeyForDefaults)
+            
         }
     }
 

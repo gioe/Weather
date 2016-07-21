@@ -24,36 +24,47 @@ enum APIHelper {
     case GetForecastForCoordinate(coordinate : CLLocationCoordinate2D?)
     case GetLocationFromZipCode(zipCode : String?)
     case CreateUser(user : User)
+    case UpdateUser(user : User)
     
     var url : String {
         switch self {
+            case .GetForecastForCoordinate(let coordinate):
             
-        case .GetForecastForCoordinate(let coordinate):
+                return "\(Constants.forecastRootURL)\(coordinate!.latitude),\(coordinate!.longitude)"
             
-            return "\(Constants.forecastRootURL)\(coordinate!.latitude),\(coordinate!.longitude)"
-
-        case .GetLocationFromZipCode(let zipCode):
-
-            return "\(Constants.googleRootURL)\(zipCode!)&key=\(Constants.GoogleAPIKey)"
-        
-        case .CreateUser( _):
+            case .GetLocationFromZipCode(let zipCode):
             
-            return "http://localhost:8000/api/v1/token/?format=json"
+                return "\(Constants.googleRootURL)\(zipCode!)&key=\(Constants.GoogleAPIKey)"
+            
+            case .CreateUser( _):
+            
+                return "http://localhost:8000/api/v1/token/?format=json"
+            
+            case .UpdateUser(let user):
+                
+                return "http://localhost:8000/api/v1/token/\(user.userID!)/?format=json"
+            
         }
     }
+    
+    
     
     var params : [String : AnyObject]? {
         switch self {
         case .GetLocationFromZipCode( _):
             return nil
         case .GetForecastForCoordinate( _):
-           return nil
+            return nil
         case .CreateUser(let user):
-            return ["device_token": user.deviceToken ?? "c2da7117a3fdec2f1c3a38321dc829f2de3e73de30a78f529c46c7471578d551", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+            return ["device_token": user.deviceToken ?? "7db854c3e0878c4f00dfaba434277638f36b8b7590fe012af2da439e7d767385", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+            
+        case .UpdateUser(let user):
+            return ["device_token": user.deviceToken ?? "7db854c3e0878c4f00dfaba434277638f36b8b7590fe012af2da439e7d767385", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+        
         }
+
     }
     
-
 }
 
 extension APIHelper {
@@ -64,6 +75,8 @@ extension APIHelper {
         case .GetLocationFromZipCode:
             return .GET
         case .CreateUser:
+            return .POST
+        case .UpdateUser:
             return .PUT
         }
     }
@@ -87,9 +100,10 @@ extension APIHelper {
             
         case .PUT, .POST:
             
-            Alamofire.request(endpoint.alamofireMethod, endpoint.url, parameters: endpoint.params, encoding: .JSON, headers: ["Content-type": "application/json"]).responseString { (responseObject) -> Void in
+            Alamofire.request(endpoint.alamofireMethod, endpoint.url, parameters: endpoint.params, encoding: .JSON, headers: ["Content-type": "application/json"]).responseJSON { (responseObject) -> Void in
                 if responseObject.result.isSuccess {
                     let resJson = JSON(responseObject.result.value!)
+                    print(resJson)
                     success(resJson)
                 }
                 if responseObject.result.isFailure {

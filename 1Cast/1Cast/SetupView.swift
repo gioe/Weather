@@ -94,10 +94,15 @@ protocol MessageDelegate {
                 return
             }
             
+        
             currentUser.notificationTime = inputTextField.text
             APIHelper.makeJSONRequest(APIHelper.CreateUser(user: currentUser), success: { (json) in
+                if let id = json.dictionaryValue["id"]?.stringValue{
+                    self.currentUser.userID = id
+                }
                 self.delegate?.pushNextView()
             }) { (error) in
+                
             }
             
         default: break
@@ -116,6 +121,9 @@ protocol MessageDelegate {
             datePickerView.datePickerMode = UIDatePickerMode.Time
             datePickerView.frame = CGRectMake(0, 0, 320, 140)
             sender.inputView = datePickerView
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            inputTextField.text = dateFormatter.stringFromDate(datePickerView.date)
             datePickerView.addTarget(self, action: #selector(SetupView.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
         default:
             break

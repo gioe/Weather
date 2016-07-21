@@ -17,6 +17,8 @@ struct Constants {
     static let DatePickerShownNotification = "Date Picker Shown"
     static let LoginStatusKeyForDefaults = "Login Status"
     static let LatitudeKeyForDefaults = "Latitude"
+    static let UserIDKeyForDefaults = "UserID"
+    static let DeviceTokenKeyForDefaults = "DeviceToken"
     static let LongitudeKeyForDefaults = "Longitude"
     static let NotificationTimeKeyForDefaults = "Notification Time"
     static let ZipCodeKeyForDefaults = "ZipCode"
