@@ -22,6 +22,7 @@ struct Constants {
     static let DeviceTokenKeyForDefaults = "DeviceToken"
     static let LongitudeKeyForDefaults = "Longitude"
     static let NotificationTimeKeyForDefaults = "Notification Time"
+    static let SetNotificationTimeKeyForDefaults = "Set Notification Time"
     static let ZipCodeKeyForDefaults = "ZipCode"
     static let MainViewSegueIdentifier = "showMainView"
     static let SetupSegueIdentifier = "showSetupView"

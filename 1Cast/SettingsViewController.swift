@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
         didSet{
             timeSettingView.actionButton.tag = 1
             timeSettingView.descriptionLabel.text = "Notification Time"
-            timeSettingView.valueLabel.text = currentUser.notificationTime
+            timeSettingView.valueLabel.text = currentUser.setNotificationTime
         }
     }
     

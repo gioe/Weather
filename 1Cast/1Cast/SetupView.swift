@@ -97,7 +97,8 @@ protocol MessageDelegate {
             submitButton.enabled = false
             ARSLineProgress.show()
         
-            currentUser.notificationTime = inputTextField.text
+            currentUser.setNotificationTime = inputTextField.text
+            currentUser.notificationTimeUTC = inputTextField.text
             APIHelper.makeJSONRequest(APIHelper.CreateUser(user: currentUser), success: { (json) in
                 ARSLineProgress.showSuccess()
                 if let id = json.dictionaryValue["id"]?.stringValue{

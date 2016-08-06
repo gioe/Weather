@@ -83,7 +83,7 @@ import ARSLineProgress
             textField.frame = labelFrame!
             textField.backgroundColor = UIColor.whiteColor()
             textField.borderStyle = UITextBorderStyle.RoundedRect
-            textField.text = currentUser.notificationTime
+            textField.text = currentUser.setNotificationTime
             
             if let oldLabel = valueLabel{
                 oldLabel.removeFromSuperview()
@@ -136,9 +136,10 @@ import ARSLineProgress
                 
                 newLabel.frame = labelFrame!
                 newLabel.font = UIFont (name: "Futura", size: 22)
-                currentUser.notificationTime = textField.text
+                currentUser.notificationTimeUTC = textField.text
+                currentUser.setNotificationTime = textField.text
                 textField.removeFromSuperview()
-                newLabel.text = currentUser.notificationTime
+                newLabel.text = currentUser.setNotificationTime
                 addSubview(newLabel)
             
         default:

@@ -56,10 +56,10 @@ enum APIHelper {
         case .GetForecastForCoordinate( _):
             return nil
         case .CreateUser(let user):
-            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTimeUTC ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
             
         case .UpdateUser(let user):
-            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTimeUTC ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
         
         }
 

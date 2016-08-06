@@ -90,7 +90,7 @@ struct User {
         }
     }
     
-    var notificationTime : String?{
+    var notificationTimeUTC : String?{
         get {
             
             if let time = defaults.stringForKey(Constants.NotificationTimeKeyForDefaults){
@@ -120,6 +120,21 @@ struct User {
             
             defaults.setObject(finalDateString, forKey: Constants.NotificationTimeKeyForDefaults)
             
+        }
+    }
+    
+    var setNotificationTime : String?{
+        get {
+            if let time = defaults.stringForKey(Constants.SetNotificationTimeKeyForDefaults){
+                return time
+            } else {
+                return nil
+            }
+        }
+        
+        set(newtime){
+            defaults.setObject(newtime, forKey: Constants.SetNotificationTimeKeyForDefaults)
+
         }
     }
 
