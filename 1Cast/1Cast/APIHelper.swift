@@ -38,11 +38,11 @@ enum APIHelper {
             
             case .CreateUser( _):
             
-                return "http://localhost:8000/api/v1/token/?format=json"
+                return "\(Constants.appRootURL)api/v1/token/?format=json"
             
             case .UpdateUser(let user):
                 
-                return "http://localhost:8000/api/v1/token/\(user.userID!)/?format=json"
+                return "\(Constants.appRootURL)api/v1/token/\(user.userID!)/?format=json"
             
         }
     }
@@ -56,10 +56,10 @@ enum APIHelper {
         case .GetForecastForCoordinate( _):
             return nil
         case .CreateUser(let user):
-            return ["device_token": user.deviceToken ?? "7db854c3e0878c4f00dfaba434277638f36b8b7590fe012af2da439e7d767385", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
             
         case .UpdateUser(let user):
-            return ["device_token": user.deviceToken ?? "7db854c3e0878c4f00dfaba434277638f36b8b7590fe012af2da439e7d767385", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
+            return ["device_token": user.deviceToken ?? "", "zip_code": user.zipCode ?? "", "notification_time" : user.notificationTime ?? "", "time_zone" : user.timeZone ?? "", "location_latitude" : String(user.location!.latitude) ?? "", "location_longitude" : String(user.location!.longitude) ?? ""]
         
         }
 

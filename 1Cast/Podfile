@@ -1,20 +1,21 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '9.0'
 
-target '1Cast' do
+target 'OneCast' do
   use_frameworks!
   
   pod 'PopupController'
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 3.4'
   pod 'RAMAnimatedTabBarController'
+  pod 'ARSLineProgress', '~> 1.0'
 
-  target '1CastTests' do
+  target 'OneCastTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target '1CastUITests' do
+  target 'OneCastUITests' do
     inherit! :search_paths
     # Pods for testing
   end

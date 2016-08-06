@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import ARSLineProgress
 
 protocol MessageDelegate {
     func pushNextView()
@@ -89,20 +90,24 @@ protocol MessageDelegate {
             currentIndex += 1
             
         case 1:
-            
+
             guard inputTextField.text != nil else {
                 return
             }
-            
+            submitButton.enabled = false
+            ARSLineProgress.show()
         
             currentUser.notificationTime = inputTextField.text
             APIHelper.makeJSONRequest(APIHelper.CreateUser(user: currentUser), success: { (json) in
+                ARSLineProgress.showSuccess()
                 if let id = json.dictionaryValue["id"]?.stringValue{
                     self.currentUser.userID = id
                 }
                 self.delegate?.pushNextView()
+                ARSLineProgress.hide()
             }) { (error) in
-                
+                self.submitButton.enabled = true
+                ARSLineProgress.showFail()
             }
             
         default: break

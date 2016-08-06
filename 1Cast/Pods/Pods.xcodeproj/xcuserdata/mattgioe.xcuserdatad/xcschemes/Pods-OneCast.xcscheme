@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B66B8F652690E51AC00DB8BFF2C6ADB"
-               BuildableName = "Pods_1Cast.framework"
-               BlueprintName = "Pods-1Cast"
+               BlueprintIdentifier = "6FAB307727E2D83A278A4D7BF48F7951"
+               BuildableName = "Pods_OneCast.framework"
+               BlueprintName = "Pods-OneCast"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B66B8F652690E51AC00DB8BFF2C6ADB"
-            BuildableName = "Pods_1Cast.framework"
-            BlueprintName = "Pods-1Cast"
+            BlueprintIdentifier = "6FAB307727E2D83A278A4D7BF48F7951"
+            BuildableName = "Pods_OneCast.framework"
+            BlueprintName = "Pods-OneCast"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

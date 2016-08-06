@@ -1,0 +1,6 @@
+framework module Pods_OneCast {
+  umbrella header "Pods-OneCast-umbrella.h"
+
+  export *
+  module * { export * }
+}

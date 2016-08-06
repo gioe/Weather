@@ -110,9 +110,11 @@ struct User {
             
             if offset > 0 {
                 let finalTime = date!.dateByAddingTimeInterval(offset)
+                dateFormatter.dateFormat = "HH:mm:ss"
                 finalDateString = dateFormatter.stringFromDate(finalTime)
             } else {
                 let finalTime = date!.dateByAddingTimeInterval(offset * -1)
+                dateFormatter.dateFormat = "HH:mm:ss"
                 finalDateString = dateFormatter.stringFromDate(finalTime)
             }
             
