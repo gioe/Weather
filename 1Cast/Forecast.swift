@@ -11,5 +11,11 @@ import Foundation
 struct Forecast {
     let currentWeatherStatus : String
     let currentTemperature : String
-    let icon : SKYIconView
+    let currentTime : NSDate
+    
+    init (weatherStatus : String, temperature : String, time : NSDate){
+        currentWeatherStatus = weatherStatus
+        currentTemperature = temperature
+        currentTime = time.convertToLocalTime()
+    }
 }
